@@ -5,7 +5,7 @@ const Hero = () => {
 
   useEffect(() => {
     fetch(
-      "https://newsapi.org/v2/everything?q=bitcoin&apiKey=65b45edc0d5d4f90ad82ceb6327218d5"
+      "https://newsapi.org/v2/top-headlines?country=us&apiKey=65b45edc0d5d4f90ad82ceb6327218d5"
     )
       .then((response) => response.json())
       .then((data) => {
