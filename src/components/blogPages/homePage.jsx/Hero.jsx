@@ -1,16 +1,13 @@
 import { useEffect, useState } from "react";
-
 const Hero = () => {
   const [blogs, setBlogs] = useState(null);
 
   useEffect(() => {
-    fetch(
-      "https://newsapi.org/v2/everything?q=bitcoin&apiKey=65b45edc0d5d4f90ad82ceb6327218d5"
-    )
+    fetch("/news")
       .then((response) => response.json())
       .then((data) => {
         setBlogs(data.articles);
-        console.log("this is what i logging", data);
+        console.log("this is what I'm logging", data);
       })
       .catch((error) => {
         console.error("Error fetching the news:", error);
