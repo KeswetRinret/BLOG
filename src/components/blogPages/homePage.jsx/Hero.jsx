@@ -5,7 +5,7 @@ const Hero = () => {
 
   useEffect(() => {
     fetch(
-      "https://newsapi.org/v2/top-headlines?country=us&apiKey=65b45edc0d5d4f90ad82ceb6327218d5"
+      "https://newsapi.org/v2/everything?q=bitcoin&apiKey=65b45edc0d5d4f90ad82ceb6327218d5"
     )
       .then((response) => response.json())
       .then((data) => {
@@ -26,21 +26,21 @@ const Hero = () => {
         {blogs && blogs.map((blog, index) => (
           <div 
             key={index} 
-            className="flex flex-col bg-gray-100 p-6 rounded-lg shadow-lg"
+            className="flex flex-col bg-gray-100 p-7 md:p-12 rounded-lg shadow-lg"
           >
             <img 
               src={blog.urlToImage} 
               alt=""
-              className="w-full h-40 object-cover rounded-lg mb-4" 
+              className="w-full h-52 object-cover rounded-lg mb-4" 
             />
             <h2 className="text-xl font-semibold text-blue-900 mb-2">
               {blog.title}
             </h2>
-            <p className="text-gray-700 mb-2">
-              {blog.description || "No description available"}
+            <p className="text-gray-700 text-sm mb-6">
+              {blog.description}
             </p>
             <button 
-              className="bg-blue-400 text-black font-medium py-2 px-4 rounded-xl hover:bg-blue-500 transition duration-200 self-end"
+              className="bg-blue-400 text-black font-medium py-2 px-4 rounded-xl hover:bg-blue-500 transition duration-200 self-center"
             >
               Read More
             </button>
